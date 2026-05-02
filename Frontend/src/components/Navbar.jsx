@@ -28,6 +28,10 @@ export default function Navbar() {
           Assegnazioni
         </Link>
 
+        <Link to="/documents" style={{ color: "white", textDecoration: "none" }}>
+          Documenti
+        </Link>        
+
       </div>
     </div>
   );

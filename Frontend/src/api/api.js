@@ -63,3 +63,21 @@ export async function createAssignment(data) {
 
   return res.json();
 }
+
+// DOCUMENTS
+export async function getDocumentsByVehicle(vehicleId) {
+  const res = await fetch(`${BASE_URL}/documents/${vehicleId}`);
+  return res.json();
+}
+
+export async function createDocument(data) {
+  const res = await fetch(`${BASE_URL}/documents`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  });
+
+  return res.json();
+}
