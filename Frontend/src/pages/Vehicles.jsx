@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Layout from "../components/Layout";
 import { getVehicles, createVehicle } from "../api/api";
 
 export default function Vehicles() {
@@ -35,7 +34,7 @@ export default function Vehicles() {
   }
 
   return (
-    <Layout>
+    <>
       <h1>🚗 Veicoli</h1>
 
       {/* FORM */}
@@ -77,6 +76,6 @@ export default function Vehicles() {
           </li>
         ))}
       </ul>
-    </Layout>
+    </>
   );
 }

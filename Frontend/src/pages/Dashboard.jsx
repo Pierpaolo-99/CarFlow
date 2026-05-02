@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { getExpiringDocuments } from "../api/api";
-import Layout from "../components/Layout";
 
 export default function Dashboard() {
   const [alerts, setAlerts] = useState([]);
@@ -22,7 +21,7 @@ export default function Dashboard() {
   }
 
   return (
-    <Layout>
+    <>
       <h1>🚗 Dashboard</h1>
 
       <h2>🚨 Scadenze in arrivo</h2>
@@ -41,6 +40,7 @@ export default function Dashboard() {
           ))}
         </ul>
       )}
-    </Layout>
+      
+    </>
   );
 }
