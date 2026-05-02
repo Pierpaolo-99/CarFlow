@@ -17,6 +17,9 @@ app.use("/technicians", technicianRoutes);
 const assignmentRoutes = require("./modules/assignments/assignmentsRoutes");
 app.use("/assignments", assignmentRoutes);
 
+const documentsRoutes = require("./modules/documents/documentsRoutes");
+app.use("/documents", documentsRoutes);
+
 // 🔹 Test route
 app.get("/", (req, res) => {
   res.send("CarFlow API running 🚗");
