@@ -10,7 +10,6 @@ export async function getExpiringDocuments() {
   return res.json();
 }
 
-
 // 🚗 VEHICLES
 export async function getVehicles() {
   const res = await fetch(`${BASE_URL}/vehicles`);
@@ -19,6 +18,24 @@ export async function getVehicles() {
 
 export async function createVehicle(data) {
   const res = await fetch(`${BASE_URL}/vehicles`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  });
+
+  return res.json();
+}
+
+// TECHNICIANS
+export async function getTechnicians() {
+  const res = await fetch(`${BASE_URL}/technicians`);
+  return res.json();
+}
+
+export async function createTechnician(data) {
+  const res = await fetch(`${BASE_URL}/technicians`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

@@ -19,6 +19,10 @@ export default function Navbar() {
         <Link to="/vehicles" style={{ color: "white", textDecoration: "none" }}>
           Veicoli
         </Link>
+
+        <Link to="/technicians" style={{ color: "white", textDecoration: "none" }}>
+          Tecnici
+        </Link>
       </div>
     </div>
   );
