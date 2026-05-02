@@ -1,7 +1,8 @@
 import Dashboard from "./pages/Dashboard";
+import Vehicles from "./pages/Vehicles";
 
 function App() {
-  return <Dashboard />;
+  return <Vehicles />;
 }
 
 export default App;
