@@ -45,3 +45,21 @@ export async function createTechnician(data) {
 
   return res.json();
 }
+
+// ASSIGNMENTS
+export async function getAssignments() {
+  const res = await fetch(`${BASE_URL}/assignments`);
+  return res.json();
+}
+
+export async function createAssignment(data) {
+  const res = await fetch(`${BASE_URL}/assignments`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  });
+
+  return res.json();
+}

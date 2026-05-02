@@ -4,6 +4,7 @@ import Layout from "./components/Layout";
 import Dashboard from "./pages/Dashboard";
 import Vehicles from "./pages/Vehicles";
 import Technicians from "./pages/Technicians";
+import Assignments from "./pages/Assignments";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/vehicles" element={<Vehicles />} />
           <Route path="/technicians" element={<Technicians />} />
+          <Route path="/assignments" element={<Assignments />} />
         </Route>
 
       </Routes>

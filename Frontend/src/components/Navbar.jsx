@@ -23,6 +23,11 @@ export default function Navbar() {
         <Link to="/technicians" style={{ color: "white", textDecoration: "none" }}>
           Tecnici
         </Link>
+
+        <Link to="/assignments" style={{ color: "white", textDecoration: "none" }}>
+          Assegnazioni
+        </Link>
+
       </div>
     </div>
   );
