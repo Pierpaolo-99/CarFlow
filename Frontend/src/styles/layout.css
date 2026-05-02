@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 220px;
+  background: #111;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.sidebar a:hover {
+  background: #333;
+}
+
+/* CONTENUTO */
+.content {
+  flex: 1;
+  padding: 20px;
+  background: #f5f5f5;
+}
