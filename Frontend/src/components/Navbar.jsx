@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Navbar() {
   return (
     <div style={{
@@ -10,9 +12,13 @@ export default function Navbar() {
       <h2>🚗 CarFlow</h2>
 
       <div style={{ display: "flex", gap: "15px" }}>
-        <span>Dashboard</span>
-        <span>Veicoli</span>
-        <span>Tecnici</span>
+        <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+          Dashboard
+        </Link>
+
+        <Link to="/vehicles" style={{ color: "white", textDecoration: "none" }}>
+          Veicoli
+        </Link>
       </div>
     </div>
   );
