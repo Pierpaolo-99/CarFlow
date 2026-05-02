@@ -11,6 +11,12 @@ app.use(express.json());
 const vehicleRoutes = require("./modules/vehicles/vehiclesRoutes");
 app.use("/vehicles", vehicleRoutes);
 
+const technicianRoutes = require("./modules/technicians/techniciansRoutes");
+app.use("/technicians", technicianRoutes);
+
+const assignmentRoutes = require("./modules/assignments/assignmentsRoutes");
+app.use("/assignments", assignmentRoutes);
+
 // 🔹 Test route
 app.get("/", (req, res) => {
   res.send("CarFlow API running 🚗");
