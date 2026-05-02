@@ -81,3 +81,14 @@ export async function createDocument(data) {
 
   return res.json();
 }
+
+// DASHBOARD
+export async function getDashboardData() {
+  const [alerts, vehicles, technicians] = await Promise.all([
+    fetch("http://localhost:3000/alerts/expiring-documents").then(r => r.json()),
+    fetch("http://localhost:3000/vehicles").then(r => r.json()),
+    fetch("http://localhost:3000/technicians").then(r => r.json())
+  ]);
+
+  return { alerts, vehicles, technicians };
+}

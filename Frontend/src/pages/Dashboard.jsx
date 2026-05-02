@@ -1,46 +1,49 @@
 import { useEffect, useState } from "react";
-import { getExpiringDocuments } from "../api/api";
+import { getDashboardData } from "../api/api";
+
+import Card from "../components/ui/Card";
+import AlertCard from "../components/ui/AlertCard";
+
+import "../styles/dashboard.css";
 
 export default function Dashboard() {
-  const [alerts, setAlerts] = useState([]);
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    loadData();
+    load();
   }, []);
 
-  async function loadData() {
-    try {
-      const data = await getExpiringDocuments();
-      setAlerts(data);
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
+  async function load() {
+    const res = await getDashboardData();
+    setData(res);
+    setLoading(false);
   }
+
+  if (loading) return <p>Caricamento...</p>;
 
   return (
     <>
-      <h1>🚗 Dashboard</h1>
+      <h1>🚗 CarFlow Dashboard</h1>
 
-      <h2>🚨 Scadenze in arrivo</h2>
+      {/* STATS */}
+      <div style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(3, 1fr)",
+        gap: "15px",
+        marginBottom: "30px"
+      }}>
+        <Card title="🚗 Veicoli" value={data.vehicles.length} color="#4f46e5" />
+        <Card title="👨‍🔧 Tecnici" value={data.technicians.length} color="#16a34a" />
+        <Card title="🚨 Scadenze" value={data.alerts.length} color="#dc2626" />
+      </div>
 
-      {loading ? (
-        <p>Caricamento...</p>
-      ) : alerts.length === 0 ? (
-        <p>Nessuna scadenza imminente 🎉</p>
-      ) : (
-        <ul>
-          {alerts.map((item) => (
-            <li key={item.id}>
-              {item.marca} {item.modello} ({item.targa}) -{" "}
-              <b>{item.tipo}</b> scade il {item.data_scadenza}
-            </li>
-          ))}
-        </ul>
-      )}
-      
+      {/* ALERTS */}
+      <h2>🚨 Scadenze imminenti</h2>
+
+      {data.alerts.map(a => (
+        <AlertCard key={a.id} item={a} />
+      ))}
     </>
   );
 }

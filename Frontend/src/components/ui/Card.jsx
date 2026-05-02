@@ -1,0 +1,8 @@
+export default function Card({ title, value, color }) {
+  return (
+    <div className="card" style={{ borderTop: `4px solid ${color}` }}>
+      <h3>{title}</h3>
+      <p>{value}</p>
+    </div>
+  );
+}
