@@ -20,6 +20,9 @@ app.use("/assignments", assignmentRoutes);
 const documentsRoutes = require("./modules/documents/documentsRoutes");
 app.use("/documents", documentsRoutes);
 
+const alertsRoutes = require("./modules/alerts/alertsRoutes");
+app.use("/alerts", alertsRoutes);
+
 // 🔹 Test route
 app.get("/", (req, res) => {
   res.send("CarFlow API running 🚗");
